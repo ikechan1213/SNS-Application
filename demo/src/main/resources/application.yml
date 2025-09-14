@@ -1,9 +1,10 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/mydb
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://localhost:5433/mydb
+    username: IKE
+    password: koukun1213
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update   # これでテーブル自動作成
     show-sql: true
+
