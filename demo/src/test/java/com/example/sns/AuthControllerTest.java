@@ -1,8 +1,13 @@
-import com.example.sns.controller;
+package com.example.sns;
+
+import com.example.sns.config.SecurityConfig;
+import com.example.sns.controller.AuthController;
+import com.example.sns.service.AuthService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -12,6 +17,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(AuthController.class)
+@Import(SecurityConfig.class)
 public class AuthControllerTest {
 
     @Autowired
@@ -22,7 +28,6 @@ public class AuthControllerTest {
 
     @Test
     public void testRegisterUser_Success() throws Exception {
-        // Mocking the service layer response
         when(authService.register(any(), any())).thenReturn(null);
 
         String userJson = "{\"email\":\"test@example.com\", \"password\":\"password123\"}";
