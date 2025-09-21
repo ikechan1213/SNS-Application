@@ -1,14 +1,16 @@
-package com.example.demo;
+package com.example.sns;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//Gemini-SnsApplication.java
 //エントリーポイントになるJavaファイル
-@SpringBootApplication
-public class DemoApplication {
+@SpringBootApplication(scanBasePackages = "com.example.sns")
+public class SnsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(SnsApplication.class, args);
 	}
 
 }
+
