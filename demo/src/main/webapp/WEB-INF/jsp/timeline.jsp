@@ -1,6 +1,4 @@
-<%-- timeline.jsp --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%-- JSTLのCoreタグライブラリをインポート --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -9,13 +7,11 @@
     <title>タイムライン</title>
 </head>
 <body>
-<%-- ヘッダーを読み込む --%>
-<%@ include file="header.jsp" %>
+<jsp:include page="header.jsp" />
 
 <h1>タイムライン</h1>
 
 <div class="posts-container">
-    <%-- コントローラーから渡された`posts`リストをループで回す --%>
     <c:forEach var="post" items="${posts}">
         <div class="post-item">
             <p><strong><c:out value="${post.user.email}" /></strong></p>

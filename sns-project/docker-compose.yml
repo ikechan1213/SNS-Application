@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    # データベースサービスの設定
+    image: postgres:16
+    container_name: my_postgres
+    environment:
+      POSTGRES_USER: IKE
+      POSTGRES_PASSWORD: koukun1213
+      POSTGRES_DB: mydb
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    # アプリケーションサービスの設定
+    build: ../demo
+    container_name: my_sns_app
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/mydb
+      SPRING_DATASOURCE_USERNAME: IKE
+      SPRING_DATASOURCE_PASSWORD: koukun1213
+
+volumes:
+  pgdata:
