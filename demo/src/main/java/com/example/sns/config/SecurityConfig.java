@@ -24,7 +24,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorize -> authorize
                         // /timelineと/login, /registerへのアクセスは認証なしで許可する
-                        .requestMatchers("/timeline", "/login", "/register", "/api/auth/**").permitAll()
+                        .requestMatchers("/timeline", "/login", "/register", "/api/auth/register").permitAll()
                         // それ以外の全てのリクエストは認証を必須とする
                         .anyRequest().authenticated()
                 )
