@@ -15,8 +15,11 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   app:
-    # アプリケーションサービスの設定
-    build: ../demo
+    # appサービスの設定
+    # `context: ./demo`でビルドの場所を`demo`ディレクトリに指定
+    build:
+      context: ./demo
+      dockerfile: ../Dockerfile # Dockerfileは`demo`の親ディレクトリにある
     container_name: my_sns_app
     ports:
       - "8081:8080"

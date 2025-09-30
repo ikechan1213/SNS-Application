@@ -13,6 +13,6 @@ public class LoginController {
 
     @GetMapping("/register")
     public String showRegisterForm() {
-        return "register";
+        return "register"; // register.jspを返す
     }
 }
