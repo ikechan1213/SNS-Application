@@ -1,0 +1,109 @@
+/* 基本的なページ設定 */
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5; /* 少しグレーがかった背景色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #0f1419;
+}
+
+/* ログインフォーム全体のコンテナ */
+.login-container {
+    width: 100%;
+    max-width: 400px; /* フォームの最大幅を指定 */
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* ロゴ */
+.logo {
+    font-size: 3rem; /* アイコンのサイズ */
+    color: #1DA1F2; /* Twitterブルー */
+    margin-bottom: 1rem;
+}
+
+/* メインの見出し */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* フォームの各入力欄のグループ */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+/* 入力フィールド */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cfd9de;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* paddingを含めて幅を100%にする */
+    transition: border-color 0.2s;
+}
+
+/* 入力フィールドがフォーカスされた時のスタイル */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #1DA1F2;
+    outline: none; /* デフォルトの青い枠線を消す */
+}
+
+/* ログインボタン */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 9999px; /* 角を完全に丸くする */
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background-color: #0f1419; /* 黒 */
+    color: #ffffff; /* 白文字 */
+}
+
+.btn-primary:hover {
+    background-color: #272c30; /* 少し明るい黒 */
+}
+
+/* 新規登録へのリンク */
+.links {
+    margin-top: 1.5rem;
+}
+
+.links a {
+    color: #1DA1F2;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* エラーメッセージ */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
