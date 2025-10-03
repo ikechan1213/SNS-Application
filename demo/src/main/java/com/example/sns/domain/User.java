@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 //ユーザー登録とログインに使う情報
 @Entity
+@Table(name = "users")
 @Data
 public class User {
     @Id
