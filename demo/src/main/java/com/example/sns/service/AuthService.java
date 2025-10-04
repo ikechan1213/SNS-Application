@@ -29,6 +29,13 @@ public class AuthService {
         return userRepository.save(user);
     }
 
+    public User login(String email, String password){
+        // 認証ロジックを呼び出し、結果を返す
+        // 認証に失敗した場合（Optionalが空の場合）は例外を投げる
+        return authenticate(email, password)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid email or password"));
+    }
+
     public Optional<User> authenticate(String email, String password) {
         Optional<User> user = userRepository.findByEmail(email);
         if (user.isPresent() && passwordEncoder.matches(password, user.get().getPassword())) {

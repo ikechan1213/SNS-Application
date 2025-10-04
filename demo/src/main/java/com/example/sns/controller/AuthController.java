@@ -35,7 +35,17 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login() {
-        return ResponseEntity.ok("Login successful");
+    public ResponseEntity<?> login(@RequestBody Map<String, String> payload) {
+        String email = payload.get("email");
+        String password = payload.get("password");
+        try {
+            User user = authService.login(email, password);
+            Map<String, Object> response = new HashMap<>();
+            response.put("id", user.getId());
+            response.put("email", user.getEmail());
+            return ResponseEntity.ok(response);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }
