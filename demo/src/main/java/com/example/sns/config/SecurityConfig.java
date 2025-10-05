@@ -23,7 +23,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        // ★★ この行を追加 ★★
+                        .requestMatchers("/api/auth/**").permitAll()
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                         // CSSやJavaScriptなどの静的リソースは誰でもアクセスできるように許可
                         .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
