@@ -11,6 +11,7 @@ public class LoginController {
 //        // ルートURL("/")にアクセスされたら"/login"にリダイレクトする
 //        return "redirect:/login";
 //    }
+//
 
     @GetMapping("/login")
     public String showLoginForm() {
