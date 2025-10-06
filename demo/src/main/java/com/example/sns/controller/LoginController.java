@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
-    @GetMapping("/")
-    public String root() {
-        // ルートURL("/")にアクセスされたら"/login"にリダイレクトする
-        return "redirect:/login";
-    }
+//    @GetMapping("/")
+//    public String root() {
+//        // ルートURL("/")にアクセスされたら"/login"にリダイレクトする
+//        return "redirect:/login";
+//    }
 
     @GetMapping("/login")
     public String showLoginForm() {
